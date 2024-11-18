@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real Estate Listings</title>
+  <style>
+    .filter-item {
+      display: block;
+      margin-bottom: 20;
+    }
+    .filter-item img {
+      width: 300;
+      height: 300;  
+    }
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body bgcolor="lightcyan" ><center><i>
+  <h1><i><font color="red">Shubham Real Estate</font></i></h1>
+  <font color="Maroon"><b>
+  <select id="filter">
+    <option value="all">All</option>
+    <option value="house">House</option>
+    <option value="apartment">Apartment</option>
+  </select><br><br>
+ <div class="filter-item house">
+    <img src="suburbs.jpeg" alt="House 1">
+    <h2>Beautiful House in Suburbs</h2>
+    <p>4 bedrooms, 3 bathrooms, 2500 sqft,  Location: Chennai</p>
+    <p>Price : 27,017,708 Rupees</p>
+  </div>
+  <div class="filter-item apartment">
+    <img src="2bhk apartment.jpeg" width="300" height="300" alt="Apartment 1">
+    <h2>Luxury Apartment in City</h2>
+    <p>2 bedrooms, 2 bathrooms, 1200 sqft,  Location:T nagar,Chennai</p>
+    <p>Price: 67,00,000 Rupees</p>
+  </div>
+  <div class="filter-item house">
+    <img src="hill house.jpeg" alt="House 2">
+    <h2>Modern House in Hills</h2>
+    <p>5 bedrooms, 4 bathrooms, 3500 sqft,  Location:Kodaikanal</p>
+    <p>Price: 15,197,461 Rupees</p>
+  </div>
+  <div class="filter-item apartment">
+    <img src="downtown.jpeg" alt="Apartment 2">
+    <h2>Cozy Apartment in Downtown</h2>
+    <p>1 bedroom, 1 bathroom, 800 sqft,  Location: Chennai</p>
+    <p>Price: 48,05,060</p>
+  </div>
+  <script>
+    const filterSelect = document.getElementById('filter');
+    filterSelect.addEventListener('change', (e) => {
+      const filterValue = e.target.value;
+      const filterItems = document.querySelectorAll('.filter-item');
+      filterItems.forEach((item) => {
+        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+          item.classList.remove('hide');
+        } else {
+          item.classList.add('hide');
+        }
+      });
+    });
+    
+  </script></b></font></i>
+  </center>
+</body>
+</html>
+
